@@ -18,8 +18,8 @@ const allProjects = [
     filterKey: "social",
     year: "2024",
     client: "5,000+ Delivered · Brand Creatives",
-    image: "assets/framer/service-social.jpg",
-    url: "https://www.behance.net/nirozshrestha"
+    image: "assets/social-media/social-media-thumbnail.jpg",
+    url: "social-media-designs.html"
   },
 
   // 2. Logo and Rebranding
@@ -32,7 +32,7 @@ const allProjects = [
     year: "2024",
     client: "Visual Identities & Brand Systems",
     image: "assets/framer/service-branding.webp",
-    url: "https://www.behance.net/nirozshrestha"
+    url: "logo-and-branding.html"
   },
 
   // 3. Video & Motion Graphics
@@ -45,7 +45,7 @@ const allProjects = [
     year: "2024",
     client: "Dynamic Kinetic Storytelling & Promo Reels",
     image: "assets/framer/service-motion.webp",
-    url: "https://www.behance.net/nirozshrestha"
+    url: "motion-graphics.html"
   },
 
   // 4. Ecommerce Digital Campaigns
@@ -58,7 +58,7 @@ const allProjects = [
     year: "2024",
     client: "High-Converting Sales & Seasonal Launches",
     image: "assets/framer/dashain-sale.webp",
-    url: "https://www.behance.net/nirozshrestha"
+    url: "digital-campaigns.html"
   }
 ];
 
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initScrollReveal();
   initScrollspy();
+  initSerialLightbox();
 });
 
 /* ---------- Render Vertical Project Feed ---------- */
@@ -84,7 +85,7 @@ function initProjectsFeed() {
     : allProjects.filter(p => p.filterKey === activeFilter);
 
   feed.innerHTML = filtered.map(p => `
-    <a class="project-card-v2 reveal in" href="${p.url}" target="_blank" rel="noopener" aria-label="${p.title}">
+    <a class="project-card-v2 reveal in" href="${p.url}" aria-label="${p.title}">
       <div class="project-image-box">
         <img src="${p.image}" alt="${p.title}" loading="lazy"
              onerror="this.parentElement.classList.add('img-missing'); this.remove();">
@@ -169,8 +170,8 @@ function initKathmanduClock() {
 
 /* ---------- Navigation & Mobile Drawer ---------- */
 function initNav() {
-  const menuBtn = document.getElementById('menuBtn');
-  const mobilePanel = document.getElementById('mobilePanel');
+  const menuBtn = document.getElementById('menuBtn') || document.getElementById('mobile-menu-toggle');
+  const mobilePanel = document.getElementById('mobilePanel') || document.getElementById('mobile-nav-panel');
 
   if (menuBtn && mobilePanel) {
     menuBtn.addEventListener('click', () => {
@@ -283,3 +284,59 @@ function initScrollReveal() {
 
   revealElements.forEach(el => observer.observe(el));
 }
+
+/* ---------- Serial Works Lightbox Modal ---------- */
+function initSerialLightbox() {
+  const cards = document.querySelectorAll('.serial-card');
+  const lightbox = document.getElementById('serialLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  if (!cards.length || !lightbox || !lightboxImg) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-src') || card.querySelector('img')?.getAttribute('src');
+      const title = card.getAttribute('data-title') || card.querySelector('img')?.getAttribute('alt') || '';
+      if (!src) return;
+
+      lightboxImg.src = src;
+      lightboxImg.alt = title;
+      if (lightboxCaption) lightboxCaption.textContent = title;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  // Footer Back to top handler
+  const backToTop = document.getElementById('footerBackToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+

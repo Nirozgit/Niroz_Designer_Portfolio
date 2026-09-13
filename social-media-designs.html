@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Social Media Designs — Niroz Shrestha Portfolio</title>
-    <meta name="description" content="Designed over 5,000 social media creatives for national and international brands, ensuring visual consistency, high engagement, and rapid delivery." />
-    <meta property="og:title" content="Social Media Designs — Niroz Shrestha Portfolio" />
-    <meta property="og:description" content="Designed over 5,000 social media creatives for national and international brands, ensuring visual consistency, high engagement, and rapid delivery." />
+    <title>Social Media Creatives — Niroz Shrestha</title>
+    <meta name="description" content="Serial showcase of high-impact social media creatives, festival posters, commercial billboards, and campaign designs by Niroz Shrestha." />
+    <meta property="og:title" content="Social Media Creatives — Niroz Shrestha" />
+    <meta property="og:description" content="Serial showcase of high-impact social media creatives, festival posters, commercial billboards, and campaign designs by Niroz Shrestha." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,646 +15,277 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <!-- Site Navigation -->
+  <body class="theme-dark">
+    <!-- Sticky Site Navigation Bar -->
     <header class="site-nav" id="site-nav">
       <div class="wrap nav-inner">
-        <a href="index.html" class="brand" id="nav-brand">
-          NIROZ SHRESTHA
-          <span>Senior Designer · Kathmandu</span>
-        </a>
-        <nav class="nav-links" aria-label="Main Navigation">
-          <a href="index.html">Home</a>
-          <a href="index.html#works" class="active">Work</a>
-          <a href="index.html#services">Services</a>
-          <a href="index.html#experience">Experience</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="nav-right">
-          <a href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cv-btn" id="nav-cv-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
+        <div class="nav-left-group">
+          <a href="index.html" class="nav-back-btn" id="navBackBtn" aria-label="Back to Homepage" title="Back to Homepage">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
-            Download CV
+            <span>Back to Home</span>
           </a>
-          <button class="menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+          <a href="index.html" class="brand" id="nav-brand">
+            <span class="brand-avatar">
+              <img src="assets/framer/avatar-profile.png" alt="Niroz Shrestha" width="36" height="36">
+            </span>
+            <span class="brand-meta">
+              <strong class="brand-name">Niroz Shrestha</strong>
+              <span class="brand-title">Freelance Designer</span>
+            </span>
+          </a>
+        </div>
+
+        <nav class="links" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px; margin-right:4px;">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </a>
+          <a href="index.html#work" class="nav-link active">Work</a>
+          <a href="index.html#clients" class="nav-link">Clients</a>
+        </nav>
+
+        <div class="nav-right">
+          <div class="nav-clock" id="navClock" title="Local Time in Kathmandu (NPT, UTC+5:45)">
+            <span class="clock-icon"></span>
+            <span id="kathmanduTime">Kathmandu --:--</span>
+          </div>
+          <a class="cv-link" href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener" id="nav-cv-link">
+            <span>Download CV</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </a>
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
-      <!-- Mobile Drawer Panel -->
-      <div class="wrap mobile-panel" id="mobile-nav-panel">
-        <a href="index.html">Home</a>
-        <a href="index.html#works">Work</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="social-media-designs.html">Social Media Designs</a>
-        <a href="digital-campaigns.html">Digital Campaigns</a>
-        <a href="logo-and-branding.html">Logo and Branding</a>
-        <a href="motion-graphics.html">Motion Graphics</a>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="wrap mobile-panel" id="mobilePanel">
+        <div class="mobile-clock">
+          <span>Local Time (NPT): </span><strong id="mobileKathmanduTime">--:--</strong>
+        </div>
+        <a href="index.html" class="mobile-link mobile-back-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Homepage</span>
+        </a>
+        <a href="index.html#work" class="mobile-link">Work</a>
+        <a href="index.html#clients" class="mobile-link">Clients</a>
+        <div class="mobile-actions">
+          <a href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener" class="btn-cv-mobile">
+            Download CV
+          </a>
+          <div class="mobile-socials">
+            <a href="https://np.linkedin.com/in/nirojshrestha" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/_niroz_" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener">Behance</a>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class="wrap">
-      <!-- Category Page Header -->
-      <section class="category-page-header">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <a href="index.html#works">Works</a>
-          <span>/</span>
-          <span style="color: var(--ink);">Social Media Designs</span>
-        </nav>
-        <div class="category-pill" style="display: inline-block; margin-bottom: 16px;">Category 01 &middot; 16 Curated Projects</div>
-        <h1 class="category-page-title">Social Media Designs</h1>
-        <p class="category-page-desc">Designed over 5,000 social media creatives for national and international brands, ensuring visual consistency, high engagement, and rapid delivery.</p>
-      </section>
-
-      <!-- 2 x 8 Project Grid (16 Projects Gallery) -->
-      <section class="project-gallery-section" aria-label="Social Media Designs Gallery">
-        <div class="project-grid">
-
-          <!-- Project 01 (Row 1, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-01">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-01.jpg" alt="Jeevee Mega Beauty Festival — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Jeevee Mega Beauty Festival</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Jeevee Mega Beauty Festival</h3>
-                <span>Social Creative Series</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 02 (Row 1, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-02">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-02.jpg" alt="Summer Glow Skincare — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Summer Glow Skincare</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Summer Glow Skincare</h3>
-                <span>Product Highlight Post</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 03 (Row 2, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-03">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-03.jpg" alt="Healthy Living Wellness — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Healthy Living Wellness</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Healthy Living Wellness</h3>
-                <span>Educational Carousel</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 04 (Row 2, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-04">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-04.jpg" alt="Festive Flash Deals — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Festive Flash Deals</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Festive Flash Deals</h3>
-                <span>Multi-Product Story</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 05 (Row 3, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-05">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-05.jpg" alt="Premium Fragrance Launch — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Premium Fragrance Launch</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Premium Fragrance Launch</h3>
-                <span>Luxury Ad Campaign</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 06 (Row 3, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-06">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-06.jpg" alt="Daily Essentials Discount — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Daily Essentials Discount</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Daily Essentials Discount</h3>
-                <span>Feed Promotion</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 07 (Row 4, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-07">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-07.jpg" alt="Monsoon Hydration Special — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Monsoon Hydration Special</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Monsoon Hydration Special</h3>
-                <span>Creative Visuals</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 08 (Row 4, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-08">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-08.jpg" alt="Organic Herbal Series — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Organic Herbal Series</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Organic Herbal Series</h3>
-                <span>Ingredient Showcase</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 09 (Row 5, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-09">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-09.jpg" alt="Weekend Super Clearance — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Weekend Super Clearance</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Weekend Super Clearance</h3>
-                <span>Urgent Flash Banner</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 10 (Row 5, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-10">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-10.jpg" alt="Mother's Day Special — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Mother's Day Special</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Mother's Day Special</h3>
-                <span>Emotional Narrative Campaign</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 11 (Row 6, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-11">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-11.jpg" alt="New Arrival Showcase — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">New Arrival Showcase</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>New Arrival Showcase</h3>
-                <span>Editorial Grid Post</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 12 (Row 6, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-12">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-12.jpg" alt="Winter Skincare Rituals — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Winter Skincare Rituals</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Winter Skincare Rituals</h3>
-                <span>Multi-Slide Guide</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 13 (Row 7, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-13">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-13.jpg" alt="Baby Care Gentle Essentials — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Baby Care Gentle Essentials</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Baby Care Gentle Essentials</h3>
-                <span>Product Focus</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 14 (Row 7, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-14">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-14.jpg" alt="Fitness & Nutrition Boost — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Fitness & Nutrition Boost</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Fitness & Nutrition Boost</h3>
-                <span>Active Lifestyle Creative</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 15 (Row 8, Col 1) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-15">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-15.jpg" alt="Black Friday Teaser — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Black Friday Teaser</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Black Friday Teaser</h3>
-                <span>High-Contrast Social Post</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
-
-          <!-- Project 16 (Row 8, Col 2) -->
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="project-item reveal" id="project-social-media-designs-16">
-            <div class="project-thumb-box">
-              <img src="images/social-media/project-16.jpg" alt="Year-End Mega Sale — Social Media Designs" loading="lazy" width="600" height="412" />
-              <div class="project-overlay">
-                <span class="overlay-tag">Social Media Designs</span>
-                <h3 class="overlay-title">Year-End Mega Sale</h3>
-                <span class="overlay-link-label">
-                  View on Behance
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div class="project-caption">
-              <div class="caption-left">
-                <h3>Year-End Mega Sale</h3>
-                <span>Final Countdown Creative</span>
-              </div>
-              <div class="caption-badge" title="View Project">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </div>
-            </div>
-          </a>
+    <main id="top">
+      <!-- 4. Category Heading Text Above the Works -->
+      <section class="serial-page-header">
+        <div class="wrap">
+          <h1 class="serial-category-title">Social Media Creatives</h1>
         </div>
       </section>
 
-      <!-- Category Switcher Navigation -->
-      <section class="category-switcher reveal">
-        <div class="switcher-heading">Explore Other Categories</div>
-        <div class="switcher-pills">
+      <!-- Serial Designs Grid Section -->
+      <section class="serial-works-section" aria-label="Social Media Creatives Showcase">
+        <div class="wrap serial-wrap">
+          <div class="serial-grid" id="serialGrid">
 
-              <a href="digital-campaigns.html" class="switcher-pill">Digital Campaigns &rarr;</a>
-
-              <a href="logo-and-branding.html" class="switcher-pill">Logo and Branding &rarr;</a>
-
-              <a href="motion-graphics.html" class="switcher-pill">Motion Graphics &rarr;</a>
-          <a href="index.html" class="switcher-pill">&larr; Back to Homepage</a>
-        </div>
-      </section>
-
-      <!-- Stay in Touch CTA Section -->
-      <section class="contact-section" id="contact" style="margin-top: 80px; border-radius: var(--radius); padding: 56px 40px;">
-        <div class="contact-grid">
-          <div class="contact-left">
-            <div class="section-eyebrow">Get in Touch</div>
-            <h2 class="contact-headline">Interested in working <span class="accent-word">together?</span></h2>
-            <p class="contact-lead">
-              Let's collaborate on your next brand identity, social campaign, or digital rollout.
-            </p>
-            <div class="hero-cta-row">
-              <a href="mailto:niroz.xtha@gmail.com" class="btn-primary">
-                Send an Email
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-              <a href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                Download CV
-              </a>
+            <!-- Design 01: Swim Coaching Programs Billboard -->
+            <div class="serial-card" data-title="Swim Coaching Programs For Kids & Adults — SEP Academy" data-src="images/social-media/swim-coaching-billboard.jpg">
+              <img src="images/social-media/swim-coaching-billboard.jpg" alt="Swim Coaching Programs For Kids & Adults — SEP Academy" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
             </div>
+
+            <!-- Design 02: Aishwarya Travels Authorized Agent AirAsia -->
+            <div class="serial-card" data-title="Aishwarya Travels — Authorized Agent AirAsia Campaign" data-src="images/social-media/airasia-authorized-agent.jpg">
+              <img src="images/social-media/airasia-authorized-agent.jpg" alt="Aishwarya Travels — Authorized Agent AirAsia" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 03: Dhankuta Music Fest 2080 -->
+            <div class="serial-card" data-title="Dhankuta Music Fest 2080 — Featuring Sabin Rai & The Pharaoh" data-src="images/social-media/dhankuta-music-fest.jpg">
+              <img src="images/social-media/dhankuta-music-fest.jpg" alt="Dhankuta Music Fest 2080" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 04: 2nd Kopche Festival -->
+            <div class="serial-card" data-title="2nd Kopche Festival — Cultural Event Campaign" data-src="images/social-media/kopche-festival-2nd.jpg">
+              <img src="images/social-media/kopche-festival-2nd.jpg" alt="2nd Kopche Festival Cultural Event Campaign" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 05: Domestic & International Air Tickets -->
+            <div class="serial-card" data-title="Domestic & International Air Tickets — Travel Creative" data-src="images/social-media/air-tickets-domestic-international.jpg">
+              <img src="images/social-media/air-tickets-domestic-international.jpg" alt="Domestic & International Air Tickets Campaign" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 06: Orbit International Travel Kathmandu to USA -->
+            <div class="serial-card" data-title="Orbit International Travel — Kathmandu to USA Flight Promo" data-src="images/social-media/orbit-kathmandu-usa.jpg">
+              <img src="images/social-media/orbit-kathmandu-usa.jpg" alt="Orbit International Travel Kathmandu to USA" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 07: Jeevee Mega Beauty Festival -->
+            <div class="serial-card" data-title="Jeevee Mega Beauty Festival — Social Creative Campaign" data-src="assets/framer/service-social.jpg">
+              <img src="assets/framer/service-social.jpg" alt="Jeevee Mega Beauty Festival Social Creative Campaign" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <!-- Design 08: Seasonal Flash Sale Creatives -->
+            <div class="serial-card" data-title="Seasonal Flash Deals & Brand Offers" data-src="images/social-media/project-11.jpg">
+              <img src="images/social-media/project-11.jpg" alt="Seasonal Flash Deals & Brand Offers" loading="lazy" />
+              <div class="serial-card-overlay">
+                <span class="serial-card-overlay-btn">
+                  <span>View Design</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
           </div>
+        </div>
+      </section>
 
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <span class="ci-label">Email</span>
-              <div>
-                <a href="mailto:niroz.xtha@gmail.com" class="ci-value">niroz.xtha@gmail.com</a>
-                <button class="copy-btn" data-email="niroz.xtha@gmail.com" title="Copy email address">Copy</button>
-              </div>
+      <!-- 2. Sticky Email Me to Start Project Section -->
+      <section class="sticky-connect-section" id="contact">
+        <div class="wrap">
+          <div class="sticky-connect-card">
+            <div class="sticky-connect-info">
+              <h2 class="sticky-connect-title">Email me to start a project.</h2>
+              <p class="sticky-connect-sub">
+                Quick replies on WhatsApp: <a href="https://wa.me/9779842366531" target="_blank" rel="noopener" class="wa-link">+977-9842366531</a>
+              </p>
             </div>
-
-            <div class="contact-info-item">
-              <span class="ci-label">Phone</span>
-              <a href="tel:+9779842366531" class="ci-value">+977-9842366531</a>
-            </div>
-
-            <div class="contact-info-item">
-              <span class="ci-label">Location</span>
-              <span class="ci-value">Kathmandu, Nepal</span>
-            </div>
-
-            <div class="contact-info-item">
-              <span class="ci-label">Social Platforms</span>
-              <div class="social-row">
-                <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer" class="social-pill">
-                  <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:currentColor;"><path d="M8.52 11.37c1.37-.29 2.24-1.28 2.24-2.67 0-2.31-1.74-3.56-4.54-3.56H0v13.72h6.47c3.15 0 4.9-1.46 4.9-3.92 0-1.85-1.12-3.11-2.85-3.57zm-5.46-3.8h2.88c1.37 0 2.24.59 2.24 1.63 0 1.13-.86 1.74-2.26 1.74H3.06V7.57zm3.17 8.84H3.06v-3.87h3.17c1.54 0 2.51.64 2.51 1.93 0 1.25-.97 1.94-2.51 1.94zm12.39-7.27c-3.33 0-5.54 2.4-5.54 5.75 0 3.39 2.19 5.73 5.61 5.73 2.48 0 4.14-1.19 4.97-3.11h-2.55c-.48.91-1.34 1.34-2.35 1.34-1.63 0-2.65-1.07-2.73-2.68h7.79c.07-.4.09-.76.09-1.12 0-3.37-2.07-5.91-5.64-5.91zm-2.66 4.63c.18-1.42 1.14-2.37 2.61-2.37 1.38 0 2.37.95 2.5 2.37h-5.11zm.34-6.43h4.63v1.39h-4.63V7.34z"/></svg>
-                  Behance
-                </a>
-                <a href="https://np.linkedin.com/in/nirojshrestha" target="_blank" rel="noopener noreferrer" class="social-pill">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                  LinkedIn
-                </a>
-                <a href="https://www.instagram.com/_niroz_/" target="_blank" rel="noopener noreferrer" class="social-pill">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                  Instagram
-                </a>
-              </div>
+            <div class="sticky-connect-actions">
+              <a href="mailto:niroz.xtha@gmail.com" class="banner-pill-btn banner-pill-accent" id="emailMeBtn">
+                <span>Email me &rarr;</span>
+              </a>
+              <a href="https://wa.me/9779842366531" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+                <span>WhatsApp</span>
+              </a>
+              <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+                <span>Behance &nearr;</span>
+              </a>
+              <a href="https://np.linkedin.com/in/nirojshrestha" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+                <span>LinkedIn &nearr;</span>
+              </a>
+              <a href="https://www.instagram.com/_niroz_/" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer" id="site-footer" style="margin-top: 80px;">
+    <!-- Site Footer -->
+    <footer>
       <div class="wrap footer-inner">
-        <div>
-          <div class="footer-brand">Niroz Shrestha</div>
-          <div>Senior Designer &middot; Kathmandu, Nepal &middot; &copy; 2026 Niroz Shrestha</div>
+        <div class="footer-brand-meta">
+          <span class="brand-avatar footer-avatar" aria-hidden="true">
+            <img src="assets/framer/avatar-profile.png" alt="Niroz Shrestha Logo" width="36" height="36">
+          </span>
+          <div class="footer-brand-info">
+            <div class="footer-brand">Niroz Shrestha</div>
+            <div class="footer-sub">Freelance Designer</div>
+          </div>
         </div>
         <div class="footer-links">
-          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener noreferrer">Behance</a>
-          <a href="https://np.linkedin.com/in/nirojshrestha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.instagram.com/_niroz_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="index.html">Home</a>
-          <a href="#site-nav">Back to top &uarr;</a>
+          <a href="#top" class="back-to-top" id="footerBackToTop">
+            <span>Back to Top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+          </a>
         </div>
+        <div class="footer-copy">© 2026 Niroz Shrestha. All rights reserved.</div>
       </div>
     </footer>
+
+    <!-- Interactive Lightbox Modal for Full View -->
+    <div class="serial-lightbox" id="serialLightbox" role="dialog" aria-modal="true" aria-label="Design preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close modal">&times;</button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+
+    <!-- Notification Toast for Copy Action -->
+    <div class="toast-notice" id="toastNotice" role="status" aria-live="polite"></div>
 
     <script src="js/main.js"></script>
   </body>
