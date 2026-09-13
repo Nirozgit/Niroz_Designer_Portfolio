@@ -88,7 +88,7 @@ function initProjectsFeed() {
       <div class="project-image-box">
         <img src="${p.image}" alt="${p.title}" loading="lazy"
              onerror="this.parentElement.classList.add('img-missing'); this.remove();">
-        <span class="project-badge-tag">${p.category} · ${p.year}</span>
+        <span class="project-badge-tag">${p.category}</span>
 
         <!-- Hover Overlay with Title and 'Open to view' button -->
         <div class="project-hover-overlay">
