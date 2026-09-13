@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #111111;
+    background-color: #F7F7F5;
+  }
+
+  ::selection {
+    background: #111111;
+    color: #F7F7F5;
+  }
+}
+
+/* Custom smooth styling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle image zoom transition */
+.image-zoom-container img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.035);
+}

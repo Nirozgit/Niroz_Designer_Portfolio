@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niroz Shrestha — Freelance Designer</title>
+  <meta name="description" content="Portfolio of Niroz Shrestha, Freelance Designer. Specializing in branding, digital campaigns, social media, and motion graphics.">
+  <meta property="og:title" content="Niroz Shrestha — Freelance Designer">
+  <meta property="og:description" content="Portfolio of Niroz Shrestha, Freelance Designer. Specializing in branding, digital campaigns, social media, and motion graphics.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/neue-montreal" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Subtle Film Grain Background Overlay -->
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <!-- Sticky Site Navigation Bar -->
+  <header class="site-nav" id="siteNav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" id="nav-brand">
+        <span class="brand-avatar">
+          <img src="assets/framer/avatar-profile.png" alt="Niroz Shrestha" width="36" height="36">
+        </span>
+        <span class="brand-meta">
+          <strong class="brand-name">Niroz Shrestha</strong>
+          <span class="brand-title">Freelance Designer</span>
+        </span>
+      </a>
+
+      <nav class="links" aria-label="Main Navigation">
+        <a href="#work" class="nav-link active">Work</a>
+        <a href="#clients" class="nav-link">Clients</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="nav-clock" id="navClock" title="Local Time in Kathmandu (NPT, UTC+5:45)">
+          <span class="clock-icon"></span>
+          <span id="kathmanduTime">Kathmandu --:--</span>
+        </div>
+        <a class="cv-link" href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener" id="nav-cv-link">
+          <span>Download CV</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="wrap mobile-panel" id="mobilePanel">
+      <div class="mobile-clock">
+        <span>Local Time (NPT): </span><strong id="mobileKathmanduTime">--:--</strong>
+      </div>
+      <a href="#work" class="mobile-link">Work</a>
+      <a href="#clients" class="mobile-link">Clients</a>
+      <div class="mobile-actions">
+        <a href="https://drive.google.com/drive/folders/1CuDtOsaQlmSE1qufDi-5Z5csikM16_yi?usp=drive_link" target="_blank" rel="noopener" class="btn-cv-mobile">
+          Download CV
+        </a>
+        <div class="mobile-socials">
+          <a href="https://linkedin.com/nirojshrestha" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/_niroz_" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener">Behance</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO + PROJECT SHOWCASE (Two-column layout, Left sticky on desktop) -->
+    <section id="work" class="split-section">
+      <div class="wrap split-grid">
+
+        <!-- Left Sticky Hero Column -->
+        <div class="hero-col">
+          <div class="status-pill load-anim d1" id="hero-status">
+            <span class="avatar-mini">
+              <img src="assets/framer/avatar-mini.png" alt="Niroz" width="22" height="22" onerror="this.src='assets/framer/avatar-profile.png'">
+            </span>
+            <span class="status-dot"></span>
+            <span class="status-text">Available for Work!!</span>
+          </div>
+
+          <h1 class="hero-headline load-anim d2">
+            From Concept to Creation, Let’s Build Your <span class="accent-glow">Brand</span>.
+          </h1>
+
+          <p class="hero-intro load-anim d3">
+            Hi, I'm Niroz. I specialize in creating visually stunning designs that leave a lasting impression — across branding, social campaigns, and motion graphics.
+          </p>
+
+          <div class="cta-row load-anim d4">
+            <a href="mailto:niroz.xtha@gmail.com" class="btn-primary" id="hero-contact-btn">
+              <span>Connect with me</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Scrolling Works Feed -->
+        <div class="work-col">
+          <div class="work-col-head reveal">
+            <div>
+              <span class="sub-label">Portfolio</span>
+              <h2>Featured Works</h2>
+            </div>
+            <div class="filter-bar" role="tablist" aria-label="Filter works by category">
+              <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Works</button>
+              <button class="filter-btn" data-filter="social" role="tab" aria-selected="false">Social Media</button>
+              <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Logo &amp; Rebranding</button>
+              <button class="filter-btn" data-filter="motion" role="tab" aria-selected="false">Video &amp; Motion</button>
+              <button class="filter-btn" data-filter="campaigns" role="tab" aria-selected="false">Ecommerce</button>
+            </div>
+          </div>
+
+          <!-- Project Feed (Loaded via JS) -->
+          <div class="project-feed" id="projectFeed">
+            <!-- Dynamically populated by js/main.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONNECT BANNER (From 2nd Image Reference) -->
+    <section class="connect-banner-section" aria-label="Start a Project">
+      <div class="wrap">
+        <div class="connect-banner-card reveal">
+          <div class="connect-banner-text">
+            <h2 class="connect-banner-title">Email me to start a project.</h2>
+            <p class="connect-banner-sub">
+              Quick replies on WhatsApp: <a href="https://wa.me/9779846868607" target="_blank" rel="noopener" class="wa-link">+977-9846868607</a>
+            </p>
+          </div>
+          <div class="connect-banner-actions">
+            <a href="mailto:niroz.xtha@gmail.com" class="banner-pill-btn banner-pill-orange">
+              <span>Email me &rarr;</span>
+            </a>
+            <a href="https://wa.me/9779846868607" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.behance.net/nirozshrestha" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+              <span>Behance &nearr;</span>
+            </a>
+            <a href="https://linkedin.com/nirojshrestha" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+              <span>LinkedIn &nearr;</span>
+            </a>
+            <a href="https://www.instagram.com/_niroz_" target="_blank" rel="noopener" class="banner-pill-btn banner-pill-dark">
+              <span>Instagram &nearr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED CLIENTS (Seamless Infinite Marquee) -->
+    <section id="clients" class="trusted-section" aria-label="Trusted Clients">
+      <div class="wrap">
+        <div class="clients-head reveal">
+          <span class="sub-label">Collaborations</span>
+          <h2>Trusted Clients</h2>
+          <p>Partnering with forward-thinking enterprises, retail powerhouses, and global digital brands.</p>
+        </div>
+      </div>
+
+      <div class="marquee-wrapper">
+        <div class="marquee-track" id="marqueeTrack">
+          <!-- 22 Framer Client Logos -->
+          <div class="client-item" title="SANY"><img src="assets/framer/client-sany.png" alt="SANY" loading="lazy"></div>
+          <div class="client-item" title="Jeevee"><img src="assets/framer/client-jeevee.png" alt="Jeevee" loading="lazy"></div>
+          <div class="client-item" title="Deba Jyoti Group"><img src="assets/framer/client-djg.png" alt="Deba Jyoti Group" loading="lazy"></div>
+          <div class="client-item" title="Soco"><img src="assets/framer/client-soco.png" alt="Soco" loading="lazy"></div>
+          <div class="client-item" title="Multisys"><img src="assets/framer/client-multisys.png" alt="Multisys" loading="lazy"></div>
+          <div class="client-item" title="Bhajuratna"><img src="assets/framer/client-bhajuratna.png" alt="Bhajuratna" loading="lazy"></div>
+          <div class="client-item" title="SALT"><img src="assets/framer/client-salt.png" alt="SALT" loading="lazy"></div>
+          <div class="client-item" title="DASH"><img src="assets/framer/client-dash.png" alt="DASH" loading="lazy"></div>
+          <div class="client-item" title="Beardo"><img src="assets/framer/client-beardo.png" alt="Beardo" loading="lazy"></div>
+          <div class="client-item" title="AAdhya"><img src="assets/framer/client-aadhya.png" alt="AAdhya" loading="lazy"></div>
+          <div class="client-item" title="Authentic"><img src="assets/framer/client-authentic.png" alt="Authentic" loading="lazy"></div>
+          <div class="client-item" title="Al Hattab"><img src="assets/framer/client-al-hattab.png" alt="Al Hattab" loading="lazy"></div>
+          <div class="client-item" title="KAYA"><img src="assets/framer/client-kaya.png" alt="KAYA" loading="lazy"></div>
+          <div class="client-item" title="SEP"><img src="assets/framer/client-sep.png" alt="SEP" loading="lazy"></div>
+          <div class="client-item" title="IDA"><img src="assets/framer/client-ida.png" alt="IDA" loading="lazy"></div>
+          <div class="client-item" title="Interval"><img src="assets/framer/client-interval.png" alt="Interval" loading="lazy"></div>
+          <div class="client-item" title="Pizza Express"><img src="assets/framer/client-pizza-express.png" alt="Pizza Express" loading="lazy"></div>
+          <div class="client-item" title="MSDH"><img src="assets/framer/client-msdh.png" alt="MSDH" loading="lazy"></div>
+          <div class="client-item" title="Kucho"><img src="assets/framer/client-kucho.png" alt="Kucho" loading="lazy"></div>
+          <div class="client-item" title="Hardware"><img src="assets/framer/client-hardware.png" alt="Hardware" loading="lazy"></div>
+          <div class="client-item" title="DG"><img src="assets/framer/client-dg.png" alt="DG" loading="lazy"></div>
+          <div class="client-item" title="Bikerspasal"><img src="assets/framer/client-bikerspasal.png" alt="Bikerspasal" loading="lazy"></div>
+
+          <!-- Duplicate items for seamless infinite marquee loop -->
+          <div class="client-item" title="SANY" aria-hidden="true"><img src="assets/framer/client-sany.png" alt="SANY" loading="lazy"></div>
+          <div class="client-item" title="Jeevee" aria-hidden="true"><img src="assets/framer/client-jeevee.png" alt="Jeevee" loading="lazy"></div>
+          <div class="client-item" title="Deba Jyoti Group" aria-hidden="true"><img src="assets/framer/client-djg.png" alt="Deba Jyoti Group" loading="lazy"></div>
+          <div class="client-item" title="Soco" aria-hidden="true"><img src="assets/framer/client-soco.png" alt="Soco" loading="lazy"></div>
+          <div class="client-item" title="Multisys" aria-hidden="true"><img src="assets/framer/client-multisys.png" alt="Multisys" loading="lazy"></div>
+          <div class="client-item" title="Bhajuratna" aria-hidden="true"><img src="assets/framer/client-bhajuratna.png" alt="Bhajuratna" loading="lazy"></div>
+          <div class="client-item" title="SALT" aria-hidden="true"><img src="assets/framer/client-salt.png" alt="SALT" loading="lazy"></div>
+          <div class="client-item" title="DASH" aria-hidden="true"><img src="assets/framer/client-dash.png" alt="DASH" loading="lazy"></div>
+          <div class="client-item" title="Beardo" aria-hidden="true"><img src="assets/framer/client-beardo.png" alt="Beardo" loading="lazy"></div>
+          <div class="client-item" title="AAdhya" aria-hidden="true"><img src="assets/framer/client-aadhya.png" alt="AAdhya" loading="lazy"></div>
+          <div class="client-item" title="Authentic" aria-hidden="true"><img src="assets/framer/client-authentic.png" alt="Authentic" loading="lazy"></div>
+          <div class="client-item" title="Al Hattab" aria-hidden="true"><img src="assets/framer/client-al-hattab.png" alt="Al Hattab" loading="lazy"></div>
+          <div class="client-item" title="KAYA" aria-hidden="true"><img src="assets/framer/client-kaya.png" alt="KAYA" loading="lazy"></div>
+          <div class="client-item" title="SEP" aria-hidden="true"><img src="assets/framer/client-sep.png" alt="SEP" loading="lazy"></div>
+          <div class="client-item" title="IDA" aria-hidden="true"><img src="assets/framer/client-ida.png" alt="IDA" loading="lazy"></div>
+          <div class="client-item" title="Interval" aria-hidden="true"><img src="assets/framer/client-interval.png" alt="Interval" loading="lazy"></div>
+          <div class="client-item" title="Pizza Express" aria-hidden="true"><img src="assets/framer/client-pizza-express.png" alt="Pizza Express" loading="lazy"></div>
+          <div class="client-item" title="MSDH" aria-hidden="true"><img src="assets/framer/client-msdh.png" alt="MSDH" loading="lazy"></div>
+          <div class="client-item" title="Kucho" aria-hidden="true"><img src="assets/framer/client-kucho.png" alt="Kucho" loading="lazy"></div>
+          <div class="client-item" title="Hardware" aria-hidden="true"><img src="assets/framer/client-hardware.png" alt="Hardware" loading="lazy"></div>
+          <div class="client-item" title="DG" aria-hidden="true"><img src="assets/framer/client-dg.png" alt="DG" loading="lazy"></div>
+          <div class="client-item" title="Bikerspasal" aria-hidden="true"><img src="assets/framer/client-bikerspasal.png" alt="Bikerspasal" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Toast Notification -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">Email copied to clipboard!</div>
+
+  <!-- Site Footer -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand-meta">
+        <span class="brand-avatar footer-avatar" aria-hidden="true">
+          <img src="assets/framer/avatar-profile.png" alt="Niroz Shrestha Logo" width="36" height="36">
+        </span>
+        <div class="footer-brand-info">
+          <div class="footer-brand">Niroz Shrestha</div>
+          <div class="footer-sub">Freelance Designer</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#top" class="back-to-top" id="footerBackToTop">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
+      <div class="footer-copy">© 2026 Niroz Shrestha. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
