@@ -18,7 +18,7 @@ const allProjects = [
     filterKey: "social",
     year: "2024",
     client: "5,000+ Delivered · Brand Creatives",
-    image: "assets/social-media/social-media-thumbnail.jpg",
+    image: "assets/social-media.webp",
     url: "social-media-designs.html"
   },
 
@@ -31,7 +31,7 @@ const allProjects = [
     filterKey: "branding",
     year: "2024",
     client: "Visual Identities & Brand Systems",
-    image: "assets/framer/service-branding.webp",
+    image: "assets/logo-branding.webp",
     url: "logo-and-branding.html"
   },
 
@@ -44,7 +44,7 @@ const allProjects = [
     filterKey: "motion",
     year: "2024",
     client: "Dynamic Kinetic Storytelling & Promo Reels",
-    image: "assets/framer/service-motion.webp",
+    image: "assets/motion-graphics.webp",
     url: "motion-graphics.html"
   },
 
@@ -57,7 +57,7 @@ const allProjects = [
     filterKey: "campaigns",
     year: "2024",
     client: "High-Converting Sales & Seasonal Launches",
-    image: "assets/framer/dashain-sale.webp",
+    image: "assets/digital-campaigns.webp",
     url: "digital-campaigns.html"
   }
 ];

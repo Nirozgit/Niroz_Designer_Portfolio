@@ -514,7 +514,7 @@ nav.links {
   gap: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);
-  padding: 6px 14px 6px 8px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
   width: fit-content;
   margin-bottom: 20px;
@@ -1481,7 +1481,7 @@ footer:nth-of-type(1),
 footer {
   border-top: 1px solid var(--line);
   background: var(--bg);
-  padding: 42px 0 44px;
+  padding: 30px 0;
   font-size: 14px;
   color: var(--ink-soft);
   position: relative;
@@ -1493,9 +1493,8 @@ footer:nth-of-type(1) > div:nth-of-type(1),
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-brand-meta {
@@ -1594,9 +1593,10 @@ footer:nth-of-type(1) > div:nth-of-type(1),
   font-size: 13px;
   color: #7A7479;
   width: 100%;
-  margin-top: 6px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(186, 186, 186, 0.08);
+  margin: 0;
+  padding: 0;
+  border-top: none;
+  text-align: center;
 }
 
 /* ---------- Quick Connect Banner (Reference Image) ---------- */
