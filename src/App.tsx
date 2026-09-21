@@ -12,13 +12,65 @@ import { Testimonials } from './components/Testimonials';
 import { ContactCTA } from './components/ContactCTA';
 import { Footer } from './components/Footer';
 import { ProjectDetail } from './components/ProjectDetail';
+import { GuidePage } from './components/GuidePage';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeSection, setActiveSection] = useState<string>('hero');
 
-  // Handle URL hash routing (e.g. #magicboox or #work)
+  // Check if current URL is a client guide route (e.g. /guide/aadhya, /guide/ink-contracting)
+  const getGuideSlugFromUrl = (): string | null => {
+    const path = window.location.pathname;
+    const match = path.match(/\/(?:guide|guide\.html)\/([a-zA-Z0-9_-]+)/i);
+    if (match && match[1]) return match[1].toLowerCase();
+
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('client') || params.get('id') || params.get('project');
+    if (q) return q.toLowerCase();
+
+    if (window.location.hash.startsWith('#/guide/') || window.location.hash.startsWith('#guide/')) {
+      const hashSlug = window.location.hash.replace(/^#\/?guide\//, '').trim().toLowerCase();
+      if (hashSlug) return hashSlug;
+    }
+
+    if (path === '/guide' || path === '/guide/') {
+      return 'ink-contracting';
+    }
+
+    return null;
+  };
+
+  const [guideSlug, setGuideSlug] = useState<string | null>(getGuideSlugFromUrl);
+
+  // Sync guideSlug with URL changes
   useEffect(() => {
+    const handleUrlChange = () => {
+      setGuideSlug(getGuideSlugFromUrl());
+    };
+
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
+  }, []);
+
+  // Show / Hide static portfolio based on whether a guide page is active
+  useEffect(() => {
+    const staticEl = document.getElementById('static-portfolio');
+    if (guideSlug) {
+      if (staticEl) staticEl.style.display = 'none';
+      window.scrollTo(0, 0);
+    } else {
+      if (staticEl) staticEl.style.removeProperty('display');
+    }
+  }, [guideSlug]);
+
+  // Handle URL hash routing (e.g. #magicboox or #work) when not in guide mode
+  useEffect(() => {
+    if (guideSlug) return;
+
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '').trim();
       if (!hash) {
@@ -42,11 +94,11 @@ export default function App() {
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  }, [guideSlug]);
 
   // IntersectionObserver to highlight active section in Navbar
   useEffect(() => {
-    if (selectedProject) return;
+    if (selectedProject || guideSlug) return;
 
     const sections = ['hero', 'work', 'services', 'about', 'process', 'contact'];
     const handleScroll = () => {
@@ -66,7 +118,7 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [selectedProject]);
+  }, [selectedProject, guideSlug]);
 
   const handleSelectProject = (project: Project) => {
     window.location.hash = `work/${project.slug}`;
@@ -103,6 +155,28 @@ export default function App() {
       }
     }
   };
+
+  // If a guide route is active, render the dedicated GuidePage component
+  if (guideSlug) {
+    return (
+      <GuidePage
+        slug={guideSlug}
+        onBack={() => {
+          if (window.history.length > 1 && document.referrer.includes(window.location.host)) {
+            window.history.back();
+          } else {
+            window.location.href = '/logo-and-branding.html';
+          }
+        }}
+      />
+    );
+  }
+
+  // If the static portfolio HTML is present on the page, don't double-render
+  const hasStaticPortfolio = typeof document !== 'undefined' && Boolean(document.getElementById('static-portfolio'));
+  if (hasStaticPortfolio && !selectedProject) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-[#F7F7F5] text-[#111111] selection:bg-[#111111] selection:text-[#F7F7F5] relative overflow-x-hidden">

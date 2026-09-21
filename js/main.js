@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initScrollspy();
   initSerialLightbox();
+  initAutoAspectRatio();
+  initGoogleDriveSync();
 });
 
 /* ---------- Render Vertical Project Feed ---------- */
@@ -287,26 +289,41 @@ function initScrollReveal() {
 
 /* ---------- Serial Works Lightbox Modal ---------- */
 function initSerialLightbox() {
-  const cards = document.querySelectorAll('.serial-card');
   const lightbox = document.getElementById('serialLightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  if (!cards.length || !lightbox || !lightboxImg) return;
+  if (!lightbox || !lightboxImg) return;
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src = card.getAttribute('data-src') || card.querySelector('img')?.getAttribute('src');
-      const title = card.getAttribute('data-title') || card.querySelector('img')?.getAttribute('alt') || '';
-      if (!src) return;
+  // Delegated click handler on document for current and dynamically synced cards
+  document.addEventListener('click', (e) => {
+    // 1. Client Guide dynamic page navigation (no lightbox, stays inside website)
+    const guideCard = e.target.closest('.serial-card.serial-card-guide, .serial-card[data-client-slug]');
+    if (guideCard) {
+      const slug = guideCard.getAttribute('data-client-slug');
+      const targetUrl = guideCard.getAttribute('data-guide-url') || (slug ? `/guide/${slug}` : null);
+      if (targetUrl) {
+        e.preventDefault();
+        window.location.href = targetUrl;
+        return;
+      }
+    }
 
-      lightboxImg.src = src;
-      lightboxImg.alt = title;
-      if (lightboxCaption) lightboxCaption.textContent = title;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
+    // 2. Fallback lightbox for standard image cards
+    const card = e.target.closest('.serial-card.enable-lightbox');
+    if (!card) return;
+
+    const fullGuide = card.getAttribute('data-full-guide');
+    const src = fullGuide || card.getAttribute('data-src') || card.querySelector('img')?.getAttribute('src');
+    const title = card.getAttribute('data-title') || card.querySelector('img')?.getAttribute('alt') || '';
+    if (!src) return;
+
+    lightboxImg.src = src;
+    lightboxImg.alt = title;
+    if (lightboxCaption) lightboxCaption.textContent = title;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
 
   function closeLightbox() {
@@ -338,5 +355,140 @@ function initSerialLightbox() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+}
+
+/* ---------- Google Drive Live Folder Synchronization ---------- */
+function initGoogleDriveSync() {
+  const serialGrids = document.querySelectorAll('.serial-grid[data-drive-folder]');
+  if (!serialGrids.length) return;
+
+  serialGrids.forEach(serialGrid => {
+    const folderId = serialGrid.getAttribute('data-drive-folder');
+    if (!folderId) return;
+
+    async function syncFromDrive() {
+      try {
+        let res;
+        const staticFallback = folderId === '1JPKtgjLMcRf2a6-YPQvWXqsivNeGUNnf'
+          ? '/api/drive-folder-logo-branding.json'
+          : '/api/drive-folder-images.json';
+
+        try {
+          res = await fetch(`/api/drive-folder-images?folderId=${encodeURIComponent(folderId)}`);
+        } catch {
+          res = await fetch(staticFallback);
+        }
+
+        if (!res || !res.ok) {
+          res = await fetch(staticFallback);
+        }
+
+        if (!res || !res.ok) return;
+
+        const data = await res.json();
+        if (!data || !data.images || !Array.isArray(data.images) || data.images.length === 0) {
+          return;
+        }
+
+        const currentCards = Array.from(serialGrid.querySelectorAll('.serial-card'));
+        const currentIds = currentCards.map(c => c.getAttribute('data-drive-id')).filter(Boolean);
+        const newIds = data.images.map(img => img.id);
+
+        // Check if count and IDs in order match exactly
+        const isIdentical = currentIds.length === newIds.length && currentIds.every((id, idx) => id === newIds[idx]);
+        if (isIdentical) {
+          return;
+        }
+
+        // Re-render thumbnails matching the Google Drive folder exactly with natural aspect ratio support
+        serialGrid.innerHTML = data.images.map((img, idx) => {
+          const title = img.title || img.filename || `Design 0${idx + 1}`;
+          const fallback = img.fallbackUrl ? ` onerror="this.onerror=null;this.src='${img.fallbackUrl}'"` : '';
+          const ratio = (img.width && img.height) ? `${img.width} / ${img.height}` : (img.aspectRatio || '');
+          const styleAttr = ratio ? ` style="--image-ratio: ${ratio}; aspect-ratio: var(--image-ratio);"` : '';
+          const onloadAttr = ` onload="if(this.naturalWidth && this.naturalHeight){const r=this.naturalWidth+' / '+this.naturalHeight;this.parentElement.style.setProperty('--image-ratio',r);this.parentElement.style.aspectRatio=r;}"`;
+          const slug = img.slug || (img.clientName ? img.clientName.toLowerCase().replace(/[^a-z0-9]+/g, '-') : `client-${idx + 1}`);
+          const clientName = img.clientName || title;
+          const guideUrl = `/guide/${slug}`;
+
+          return `
+              <div class="serial-card serial-card-guide" data-client-slug="${slug}" data-title="${title}" data-drive-id="${img.id}" data-guide-url="${guideUrl}"${styleAttr}>
+                <img src="${img.url}"${fallback}${onloadAttr} alt="${title}" loading="lazy" />
+                <div class="serial-card-overlay">
+                  <a href="${guideUrl}" class="btn-full-guide" aria-label="View Full Guide for ${clientName}">
+                    <span>Full Guide</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                </div>
+              </div>`;
+        }).join('\n');
+
+        // Re-apply aspect ratios to newly generated cards
+        initAutoAspectRatio();
+
+      } catch (err) {
+        console.warn('[Google Drive Sync]', err);
+      }
+    }
+
+    // Initial sync check
+    syncFromDrive();
+
+    // Polling every 30 seconds to catch newly uploaded, deleted, or replaced images in Google Drive
+    setInterval(syncFromDrive, 30000);
+
+    // Sync immediately when user returns to the tab
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        syncFromDrive();
+      }
+    });
+  });
+}
+
+/* ---------- Auto-Adaptive Aspect Ratio For Thumbnails ---------- */
+function initAutoAspectRatio() {
+  function applyRatioToCard(card) {
+    if (!card) return;
+    const img = card.querySelector('img');
+    if (!img) return;
+
+    function computeAndApply() {
+      if (img.naturalWidth && img.naturalHeight) {
+        const ratio = `${img.naturalWidth} / ${img.naturalHeight}`;
+        card.style.setProperty('--image-ratio', ratio);
+        card.style.aspectRatio = ratio;
+      }
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+      computeAndApply();
+    } else {
+      img.addEventListener('load', computeAndApply, { once: true });
+    }
+  }
+
+  document.querySelectorAll('.serial-card').forEach(applyRatioToCard);
+
+  // Observe dynamic DOM insertions in any serial-grid so dynamically added cards adapt immediately
+  const grids = document.querySelectorAll('.serial-grid');
+  grids.forEach(grid => {
+    if (grid._ratioObserverAttached) return;
+    grid._ratioObserverAttached = true;
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(mutation => {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === 1) {
+            if (node.classList && node.classList.contains('serial-card')) {
+              applyRatioToCard(node);
+            } else if (node.querySelectorAll) {
+              node.querySelectorAll('.serial-card').forEach(applyRatioToCard);
+            }
+          }
+        });
+      });
+    });
+    observer.observe(grid, { childList: true, subtree: true });
+  });
 }
 

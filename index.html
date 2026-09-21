@@ -13,11 +13,20 @@
   <link href="https://fonts.cdnfonts.com/css/neue-montreal" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    if (window.location.pathname.startsWith('/guide') || window.location.hash.startsWith('#/guide')) {
+      document.documentElement.classList.add('is-guide-route');
+    }
+  </script>
+  <style>
+    .is-guide-route #static-portfolio { display: none !important; }
+  </style>
 </head>
 <body>
 
-  <!-- Subtle Film Grain Background Overlay -->
-  <div class="bg-grain" aria-hidden="true"></div>
+  <div id="static-portfolio">
+    <!-- Subtle Film Grain Background Overlay -->
+    <div class="bg-grain" aria-hidden="true"></div>
 
   <!-- Sticky Site Navigation Bar -->
   <header class="site-nav" id="siteNav">
@@ -231,9 +240,15 @@
       <div class="footer-copy">@2026 Niroz Shrestha, All rights reserved.</div>
     </div>
   </footer>
+  </div> <!-- /#static-portfolio -->
+
+  <!-- React Application Root for Client Guide Routes (/guide/:slug) -->
+  <div id="root"></div>
 
   <!-- Main JavaScript -->
   <script src="js/main.js"></script>
+  <!-- React Bundle Entry Point -->
+  <script type="module" src="/src/main.tsx"></script>
 
 </body>
 </html>

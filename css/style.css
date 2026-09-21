@@ -188,30 +188,35 @@ header.site-nav {
 .nav-back-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
-  background: rgba(255, 109, 41, 0.1);
-  border: 1px solid rgba(255, 109, 41, 0.32);
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
-  padding: 7px 15px;
+  height: 38px;
+  padding: 0 15px;
   border-radius: var(--radius-pill);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .nav-back-btn:hover {
-  background: var(--accent);
-  color: #FFFFFF;
-  border-color: var(--accent);
-  box-shadow: 0 4px 16px rgba(255, 109, 41, 0.4);
+  background: rgba(255, 109, 41, 0.15);
+  color: var(--accent);
+  border-color: rgba(255, 109, 41, 0.45);
+  box-shadow: 0 4px 18px rgba(255, 109, 41, 0.25);
   transform: translateX(-2px);
 }
 
 .nav-back-btn svg {
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .nav-back-btn:hover svg {
@@ -223,7 +228,9 @@ header.site-nav {
     display: none;
   }
   .nav-back-btn {
-    padding: 9px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
     border-radius: 50%;
   }
 }
@@ -1818,82 +1825,109 @@ footer:nth-of-type(1) > div:nth-of-type(1),
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  align-items: start;
 }
 
 .serial-card {
   position: relative;
+  width: 100%;
   border-radius: 26px;
   overflow: hidden;
   background: #181418;
   border: 1px solid rgba(255, 255, 255, 0.07);
   box-shadow: 0 16px 44px -10px rgba(0, 0, 0, 0.7);
   cursor: pointer;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: var(--image-ratio, auto);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .serial-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  pointer-events: none;
+  user-select: none;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Subtle professional hover effect */
 .serial-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 109, 41, 0.4);
-  box-shadow: 0 26px 54px -10px rgba(0, 0, 0, 0.82), 0 0 28px rgba(255, 109, 41, 0.16);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px -8px rgba(0, 0, 0, 0.85);
 }
 
 .serial-card:hover img {
-  transform: scale(1.025);
+  transform: scale(1.03);
 }
 
-/* Subtle view pill appearing on hover */
+/* Subtle dark overlay with centered Full Guide button */
 .serial-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 50%);
-  opacity: 0;
+  background: rgba(14, 14, 16, 0.48);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
   display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  transition: opacity 0.25s ease;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 5;
 }
 
 .serial-card:hover .serial-card-overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
-.serial-card-overlay-btn {
+.btn-full-guide {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(14, 14, 16, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #FFFFFF;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #0E0E10;
   font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* Sticky Email Me to Start Project Section */
+.serial-card:hover .btn-full-guide {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.btn-full-guide:hover {
+  background: var(--accent); /* #ff6d29 */
+  border-color: var(--accent);
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(255, 109, 41, 0.45);
+}
+
+/* Email Me to Start Project Section (Non-sticky at bottom of page) */
 .sticky-connect-section {
-  position: sticky;
-  bottom: 20px;
-  z-index: 90;
-  padding: 12px 0;
+  position: static;
+  padding: 40px 0 32px;
   margin-top: 20px;
   margin-bottom: 24px;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .sticky-connect-card {
@@ -2058,4 +2092,238 @@ footer:nth-of-type(1) > div:nth-of-type(1),
     padding: 8px 0;
   }
 }
+
+/* ==========================================================================
+   Dynamic Client Brand Guide Page
+   Reference structure: https://niroz.framer.website/logo-ink
+   ========================================================================== */
+
+.guide-main {
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.guide-breadcrumb-section {
+  padding: 32px 0 12px;
+}
+
+.guide-breadcrumb-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.guide-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.guide-back-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateX(-3px);
+}
+
+.guide-hero-section {
+  padding: 16px 0 36px;
+}
+
+.guide-hero-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.guide-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.guide-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 5.5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin: 0 0 18px;
+}
+
+.guide-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guide-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.guide-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.guide-meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.guide-meta-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.guide-description {
+  margin-top: 28px !important;
+  margin-bottom: 16px !important;
+  line-height: 1.85 !important;
+  letter-spacing: 0.015em !important;
+  color: #9A9895 !important;
+}
+
+.guide-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.guide-action-btn:hover {
+  background: #FFFFFF;
+  color: #0E0E10;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Full Guide Presentation Visual Section */
+.guide-visual-section {
+  padding: 8px 0 50px;
+}
+
+.guide-visual-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.guide-visual-frame {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #141214;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+/* Natural aspect ratio display: never cropped, never stretched */
+.guide-visual-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  pointer-events: auto;
+  border-radius: 24px;
+}
+
+/* Responsive PDF embed viewer */
+.guide-visual-pdf {
+  width: 100%;
+  height: 85vh;
+  min-height: 650px;
+  border: none;
+  display: block;
+  background: #141214;
+}
+
+/* Loading & Fallback states */
+.guide-status-box {
+  text-align: center;
+  padding: 70px 20px;
+  color: var(--ink-muted);
+}
+
+.guide-spin-icon {
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: guideSpin 0.75s linear infinite;
+}
+
+@keyframes guideSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .guide-hero-title {
+    font-size: 32px;
+  }
+  .guide-meta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .guide-visual-frame {
+    border-radius: 18px;
+  }
+  .guide-visual-img {
+    border-radius: 18px;
+  }
+}
+
 
